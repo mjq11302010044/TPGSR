@@ -92,8 +92,6 @@ class TextSR(base.TextBase):
             for i in range(self.args.stu_iter - 1):
                 model_sep = self.generator_init(i+1)['model']
                 model_list.append(model_sep)
-        # else:
-        #     model_list = [model]
 
         tensorboard_dir = os.path.join("tensorboard", self.vis_dir)
         if not os.path.isdir(tensorboard_dir):
@@ -134,16 +132,6 @@ class TextSR(base.TextBase):
                 'model': moran,
                 'data_in_fn': self.parse_moran_data,
                 'string_process': get_string_crnn
-            }
-
-        elif self.args.test_model == "SEED":
-            seed, aster_info = self.SEED_init()
-            if isinstance(seed, torch.nn.DataParallel):
-                seed.device_ids = [0]
-            test_bible["SEED"] = {
-                'model': seed,
-                'data_in_fn': self.parse_SEED_data,
-                'string_process': get_string_aster
             }
 
 
@@ -228,8 +216,7 @@ class TextSR(base.TextBase):
                             text_label = label_vecs
                         else:
                             images_hr, images_lr, label_strs = data
-                    # print("images_lr:", images_lr.shape)
-
+                
                     if self.args.syn:
                         #images_lr = nn.functional.interpolate(images_hr, (self.config.TRAIN.height // self.scale_factor,
                         #                                                  self.config.TRAIN.width // self.scale_factor),
@@ -257,20 +244,16 @@ class TextSR(base.TextBase):
                         loss_sem = image_crit["semantic_loss"]
 
                         loss_sem_cal = 0.
-                        # for pred_vec in all_pred_vecs:
-                        #    loss_sem_cal += loss_sem(pred_vec, word_vec) * 0.
-
-                        # loss_sem_cal = torch.sum(loss_sem_cal)
-
+                        
                         loss_im = loss_img + loss_sem_cal
-                        # print("loss_im:", loss_img.data.cpu().numpy(), "loss_sem:", loss_sem_cal.data.cpu().numpy())
+                        
                     elif self.args.arch == "tsrn_c2f":
-                        # print("keys:", image_crit.keys())
+                        
                         image_sr, image_coar = model(images_lr)
 
                         loss_img = image_crit(image_sr, images_hr).mean() * 100
                         loss_coar = image_crit(image_coar, image_coar_gt).mean() * 100
-                        # loss_sem = image_crit["semantic_loss"]
+                        
                         loss_im = loss_img + loss_coar
                     elif self.args.arch in ["tsrn_tl", "tsrn_tl_wmask"]:
 
@@ -298,10 +281,6 @@ class TextSR(base.TextBase):
                         ##############
                         '''
 
-                        # print("text_label:", text_label)
-
-                        # noise = (torch.rand(label_vecs.shape) - 0.5) * 0.2
-                        # label_vecs += noise.to(label_vecs.device)
                         # [T, B, C] -> [B, T, C] -> [B, 1, T, C]
                         label_vecs_final = label_vecs.permute(1, 0, 2).unsqueeze(1).permute(0, 3, 1, 2)
                         ###############################################
@@ -318,8 +297,6 @@ class TextSR(base.TextBase):
                         aster_dict_hr = self.parse_crnn_data(images_hr[:, :3, :, :])
                         label_vecs_logits_hr = aster(aster_dict_hr).detach()
                         label_vecs_hr = torch.nn.functional.softmax(label_vecs_logits_hr, -1)
-
-                        # label_vecs_final_hr = label_vecs_hr.permute(1, 0, 2).unsqueeze(1).permute(0, 3, 1, 2)
 
                         cascade_images = images_lr
 
@@ -340,11 +317,6 @@ class TextSR(base.TextBase):
 
                             label_vecs_logits = stu_model(aster_dict_lr)
                             label_vecs = torch.nn.functional.softmax(label_vecs_logits, -1)
-
-                            # print("label_vecs:", label_vecs.shape,
-                            #       np.unique(label_vecs.data.cpu().numpy()))
-                            # print("label_vecs_hr:", label_vecs_hr.shape,
-                            #      np.unique(label_vecs_hr.data.cpu().numpy()))
 
                             label_vecs_final = label_vecs.permute(1, 0, 2).unsqueeze(1).permute(0, 3, 1, 2)
 
@@ -371,17 +343,7 @@ class TextSR(base.TextBase):
                                 pick = 0
                             else:
                                 pick = i
-                            '''
-                            if i > 0:
-                                cascade_images = nn.functional.interpolate(cascade_images,
-                                                                           (
-                                                                           self.config.TRAIN.height // self.scale_factor,
-                                                                           self.config.TRAIN.width // self.scale_factor),
-                                                                           mode='bicubic')
-                            cascade_images = model_list[pick](cascade_images, label_vecs_final)
-                            '''
-
-                            # print("text_label:", text_label.shape, text_label.sum(2).shape)
+                            
                             if self.args.use_label:
                                 # [B, L]
                                 text_sum = text_label.sum(1).squeeze(1)
@@ -453,23 +415,10 @@ class TextSR(base.TextBase):
                         image_sr = model(images_lr[:, :channel_num, ...])
                         loss_img = loss_im = image_crit(image_sr, images_hr[:, :channel_num, ...]).mean() * 100
                         loss_recog_distill = torch.zeros(1)
-                    # loss_img.requ ires_grad=True
-                    # grad_ = torch.autograd.grad(loss_im, label_vecs_logits)
-
-                    #label_vecs_logits.retain_grad()
-                    #label_vecs_logits_hr.retain_grad()
-                    #loss_recog_distill.retain_grad()
-                    #loss_img.retain_grad()
-
+                    
                     optimizer_G.zero_grad()
                     loss_im.backward()
 
-                    #print("label_vecs_logits_grad:",
-                    #      label_vecs_logits.grad.shape,
-                    #      # label_vecs_logits_hr.grad,
-                    #      loss_recog_distill.grad.shape,
-                    #      loss_img.grad.shape
-                    #      )
                     for model in model_list:
                         torch.nn.utils.clip_grad_norm_(model.parameters(), 0.25)
                     optimizer_G.step()
