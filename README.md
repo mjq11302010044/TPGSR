@@ -1,6 +1,8 @@
 # TPGSR
 Text Prior Guided Scene Text Image Super-Resolution
 
+![alt text](http://https://github.com/mjq11302010044/TPGSR/visualization/TextSupReso-vis_sr_v2.pdf)
+
 1. Environment:
 ```
 GPU: GTX1080TI or GTX2080TI
