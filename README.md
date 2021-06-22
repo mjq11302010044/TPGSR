@@ -1,6 +1,14 @@
 # TPGSR
 Text Prior Guided Scene Text Image Super-Resolution
 
+Environment:
+
+	Python >= 3.6
+	
+	Pytorch >= 1.2
+	
+	Numpy and other possible python packages
+
 
 1. Download the pretrained recognizer from: 
 
