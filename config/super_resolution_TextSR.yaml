@@ -1,0 +1,57 @@
+MODEL:
+
+
+TRAIN:
+  train_data_dir: [
+    # '../../hard_space1/mjq/TextZoom/train1',
+    # '../../hard_space1/mjq/TextZoom/train2',
+    '../../hard_space1/mjq/IC15SR/DATA/TRAIN/',
+    # '../../hard_space1/mjq/ic15_4468_train_lmdb/'
+  ]
+  batch_size: 512
+  width: 384
+  height: 32
+  epochs: 600
+  cuda: True
+  ngpu: 2
+  workers: 8
+  resume: ''
+  ckpt_dir: './ckpt/with_test'
+  voc_type: 'all' #'digits lower upper all'
+  saveInterval: 200
+  displayInterval: 50 #display loss
+  adadelta: False
+  lr: 0.001
+  adam: True
+  optimizer: "Adam"
+  beta1: 0.5
+  manualSeed: 1234
+  max_len: 100
+  keep_ratio: False
+  down_sample_scale: 2
+
+  VAL:
+    val_data_dir: [
+
+      #      '../../hard_space1/mjq/TextZoom/test/easy',
+      #'../../hard_space1/mjq/TextZoom/test/medium',
+      # '../../hard_space1/mjq/TextZoom/test/hard',
+      #  "/home/shikima/workspace/hard_space1/mjq/IC15rec_mdb/"
+                    '../../hard_space1/mjq/IC15SR/DATA/TEST/',
+    ]
+    n_vis: 10
+    vis_dir: 'demo'
+    valInterval: 50 #-1, val at the end of epoch
+    rec_pretrained: 'aster_demo.pth.tar'
+    moran_pretrained: 'moran_demo.pth'
+    crnn_pretrained: 'crnn.pth'
+
+TEST:
+  checkpoint: ''
+  test_data_dir: [
+  ]
+
+CONVERT:
+  image_dir:
+  lmdb_dir:
+  n_convert: 10
