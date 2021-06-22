@@ -1,7 +1,7 @@
 # TPGSR
 Text Prior Guided Scene Text Image Super-Resolution
 
-![alt text](https://github.com/mjq11302010044/TPGSR/visualization/TextSupReso-vis_sr_v2.png)
+![TPGSR visualization](https://github.com/mjq11302010044/TPGSR/tree/main/visualization/TextSupReso-vis_sr_v2.png)
 
 1. Environment:
 ```
