@@ -3,9 +3,9 @@ Text Prior Guided Scene Text Image Super-Resolution
 
 1. Environment:
 ```
-	Python >= 3.6
-	Pytorch >= 1.2
-	Numpy and other possible python packages
+Python >= 3.6
+Pytorch >= 1.2
+Numpy and other possible python packages
 ```
 
 2. Download the pretrained recognizer from: 
@@ -20,7 +20,10 @@ Text Prior Guided Scene Text Image Super-Resolution
 
 4. Run the train-prefixed shell to train the corresponding model (e.g. TPGSR-TSRN):
 ```
-	chmod a+x train_TPGSR-TSRN.sh
-	./train_TPGSR-TSRN.sh
+chmod a+x train_TPGSR-TSRN.sh
+./train_TPGSR-TSRN.sh
 ```
 5. Run the test-prefixed shell to test the corresponding model.
+```
+Adding '--go_test' in the shell file
+```
