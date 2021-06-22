@@ -1,14 +1,14 @@
 # TPGSR
 Text Prior Guided Scene Text Image Super-Resolution
 
-Environment:
+1. Environment:
 
 	Python >= 3.6
 	Pytorch >= 1.2
 	Numpy and other possible python packages
 
 
-1. Download the pretrained recognizer from: 
+2. Download the pretrained recognizer from: 
 
 	Aster: https://github.com/ayumiymk/aster.pytorch
 	
@@ -16,9 +16,10 @@ Environment:
 	
 	CRNN: https://github.com/Canjie-Luo/MORAN_v2
 
-2. Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights from recognizer in '$TPGSR_ROOT$/src'.
+3. Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights from recognizer in '$TPGSR_ROOT$/src'.
 
-3. Run the train-prefixed shell to train the corresponding model (e.g. TPGSR-TSRN):
+4. Run the train-prefixed shell to train the corresponding model (e.g. TPGSR-TSRN):
+
 	chmod a+x train_TPGSR-TSRN.sh
 	./train_TPGSR-TSRN.sh
 
