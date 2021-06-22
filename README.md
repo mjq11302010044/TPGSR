@@ -3,6 +3,7 @@ Text Prior Guided Scene Text Image Super-Resolution
 
 1. Environment:
 ```
+GPU: GTX1080TI or GTX2080TI
 Python >= 3.6
 Pytorch >= 1.2
 Numpy and other possible python packages
