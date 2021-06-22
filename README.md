@@ -18,5 +18,8 @@ Environment:
 
 2. Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights from recognizer in '$TPGSR_ROOT$/src'.
 
-3. Run the train-prefixed shell to train the corresponding model.
-4. Run the test-prefixed shell to test the corresponding model.
+3. Run the train-prefixed shell to train the corresponding model (e.g. TPGSR-TSRN).
+	chmod a+x train_TPGSR-TSRN.sh
+	./train_TPGSR-TSRN.sh
+
+5. Run the test-prefixed shell to test the corresponding model.
