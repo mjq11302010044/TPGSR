@@ -19,7 +19,7 @@ Numpy and other possible python packages
 	
 	CRNN: https://github.com/Canjie-Luo/MORAN_v2
 
-3. Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights from recognizer in '$TPGSR_ROOT$/src'.
+3. Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights from recognizer in '$TPGSR_ROOT$/'.
 
 4. Run the train-prefixed shell to train the corresponding model (e.g. TPGSR-TSRN):
 ```
