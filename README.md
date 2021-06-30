@@ -1,5 +1,6 @@
 # TPGSR
 Text Prior Guided Scene Text Image Super-Resolution
+https://arxiv.org/abs/2106.15368
 
 ![TPGSR visualization](./visualization/TextSupReso-vis_sr_v2.png)
 
