@@ -17,7 +17,7 @@ _Department of Computing, The Hong Kong Polytechnic University](http://www.comp.
 ![numpy](https://img.shields.io/badge/cuda-v9.1-green.svg?style=plastic)
 
 ```
-Other possible python packages
+Other possible python packages like pyyaml, cv2, Pillow and imgaug
 ```
 
 2. Download the pretrained recognizer from: 
