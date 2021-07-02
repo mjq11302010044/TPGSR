@@ -18,9 +18,9 @@ _Department of Computing, The Hong Kong Polytechnic University](http://www.comp.
 ```
 Other possible python packages like pyyaml, cv2, Pillow and imgaug
 ```
+
 ## Main idea
-## Main idea
-<img src="figs/architecture.png" width="784px"/> 
+<img src="./visualization/architecture.png" width="784px"/> 
 
 ## Download the pretrained recognizer from: 
 
