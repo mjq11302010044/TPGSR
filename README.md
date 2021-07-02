@@ -4,6 +4,7 @@ https://arxiv.org/abs/2106.15368
 _Jianqi Ma, Shi Guo, [Lei Zhang](https://www4.comp.polyu.edu.hk/~cslzhang)_  
 _Department of Computing, The Hong Kong Polytechnic University](http://www.comp.polyu.edu.hk), Hong Kong, China_
 
+#### Recovery Results
 ![TPGSR visualization](./visualization/TextSupReso-vis_sr_v2.png)
 
 1. Environment:
