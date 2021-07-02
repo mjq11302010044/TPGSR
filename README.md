@@ -29,8 +29,8 @@ Other possible python packages like pyyaml, cv2, Pillow and imgaug
 ## Download the pretrained recognizer from: 
 
 	Aster: https://github.com/ayumiymk/aster.pytorch  
-	MORAN: https://github.com/meijieru/crnn.pytorch  
-	CRNN: https://github.com/Canjie-Luo/MORAN_v2  
+	MORAN:  https://github.com/Canjie-Luo/MORAN_v2  
+	CRNN: https://github.com/meijieru/crnn.pytorch
 
 Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights from recognizer in '$TPGSR_ROOT$/'.
 
