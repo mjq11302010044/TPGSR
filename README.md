@@ -18,6 +18,9 @@ _Department of Computing, The Hong Kong Polytechnic University](http://www.comp.
 ```
 Other possible python packages like pyyaml, cv2, Pillow and imgaug
 ```
+## Main idea
+## Main idea
+<img src="figs/architecture.png" width="784px"/> 
 
 ## Download the pretrained recognizer from: 
 
@@ -36,6 +39,7 @@ Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights 
 chmod a+x train_TPGSR-TSRN.sh
 ./train_TPGSR-TSRN.sh
 ```
+
 ## Run the test-prefixed shell to test the corresponding model.
 ```
 Adding '--go_test' in the shell file
