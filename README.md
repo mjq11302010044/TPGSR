@@ -20,8 +20,11 @@ Other possible python packages like pyyaml, cv2, Pillow and imgaug
 ```
 
 ## Main idea
+## Single stage with loss
 <img src="./visualization/TextSupReso-TPGSR_v3.png" width="960px"/> 
-<img src="./visualization/mt.jpg"/> 
+
+## Multi-stage version
+<img src="./visualization/mt.jpg"/ width="480px"> 
 
 ## Download the pretrained recognizer from: 
 
