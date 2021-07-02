@@ -9,7 +9,6 @@ _Department of Computing, The Hong Kong Polytechnic University](http://www.comp.
 
 ## Environment:
 
-## Usage
 
 ![python](https://img.shields.io/badge/python-v3.7-green.svg?style=plastic)
 ![pytorch](https://img.shields.io/badge/pytorch-v1.2-green.svg?style=plastic)
@@ -20,23 +19,25 @@ _Department of Computing, The Hong Kong Polytechnic University](http://www.comp.
 Other possible python packages like pyyaml, cv2, Pillow and imgaug
 ```
 
-2. Download the pretrained recognizer from: 
+## Download the pretrained recognizer from: 
 
-	Aster: https://github.com/ayumiymk/aster.pytorch
-	
-	MORAN: https://github.com/meijieru/crnn.pytorch
-	
-	CRNN: https://github.com/Canjie-Luo/MORAN_v2
+	Aster: https://github.com/ayumiymk/aster.pytorch  
+	MORAN: https://github.com/meijieru/crnn.pytorch  
+	CRNN: https://github.com/Canjie-Luo/MORAN_v2  
 
-3. Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights from recognizer in '$TPGSR_ROOT$/'.
+Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights from recognizer in '$TPGSR_ROOT$/'.
 
-4. Run the train-prefixed shell to train the corresponding model (e.g. TPGSR-TSRN):
+## Download the TextZoom dataset:
+
+	https://github.com/JasonBoy1/TextZoom
+
+## Train the corresponding model (e.g. TPGSR-TSRN):
 ```
 chmod a+x train_TPGSR-TSRN.sh
 ./train_TPGSR-TSRN.sh
 ```
-5. Run the test-prefixed shell to test the corresponding model.
+## Run the test-prefixed shell to test the corresponding model.
 ```
 Adding '--go_test' in the shell file
 ```
-6. **More information to be added...**
+## **More information to be added...**
