@@ -1,8 +1,8 @@
 # Text Prior Guided Scene Text Image Super-Resolution
 https://arxiv.org/abs/2106.15368
 
-Jianqi Ma, Shi Guo, [Lei Zhang](https://www4.comp.polyu.edu.hk/~cslzhang)\\
-Department of Computing, The Hong Kong Polytechnic University](http://www.comp.polyu.edu.hk), Hong Kong, China
+_Jianqi Ma, Shi Guo, [Lei Zhang](https://www4.comp.polyu.edu.hk/~cslzhang)_
+_Department of Computing, The Hong Kong Polytechnic University](http://www.comp.polyu.edu.hk), Hong Kong, China_
 
 ![TPGSR visualization](./visualization/TextSupReso-vis_sr_v2.png)
 
