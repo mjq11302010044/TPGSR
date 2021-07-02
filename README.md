@@ -7,12 +7,17 @@ _Department of Computing, The Hong Kong Polytechnic University](http://www.comp.
 #### Recovery Results
 ![TPGSR visualization](./visualization/TextSupReso-vis_sr_v2.png)
 
-1. Environment:
+## Environment:
+
+## Usage
+
+![python](https://img.shields.io/badge/python-v3.7-green.svg?style=plastic)
+![pytorch](https://img.shields.io/badge/pytorch-v1.2-green.svg?style=plastic)
+![cuda](https://img.shields.io/badge/cuda-v9.1-green.svg?style=plastic)
+![numpy](https://img.shields.io/badge/cuda-v9.1-green.svg?style=plastic)
+
 ```
-GPU: GTX1080TI or GTX2080TI
-Python >= 3.6
-Pytorch >= 1.2
-Numpy and other possible python packages
+Other possible python packages
 ```
 
 2. Download the pretrained recognizer from: 
