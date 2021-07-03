@@ -26,7 +26,8 @@ Other possible python packages like pyyaml, cv2, Pillow and imgaug
 ### Multi-stage version
 <img src="./visualization/mt.jpg" width="480px"> 
 
-## Download the pretrained recognizer from: 
+## Configure your training
+### Download the pretrained recognizer from: 
 
 	Aster: https://github.com/ayumiymk/aster.pytorch  
 	MORAN:  https://github.com/Canjie-Luo/MORAN_v2  
@@ -34,17 +35,17 @@ Other possible python packages like pyyaml, cv2, Pillow and imgaug
 
 Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights from recognizer in '$TPGSR_ROOT$/'.
 
-## Download the TextZoom dataset:
+### Download the TextZoom dataset:
 
 	https://github.com/JasonBoy1/TextZoom
 
-## Train the corresponding model (e.g. TPGSR-TSRN):
+### Train the corresponding model (e.g. TPGSR-TSRN):
 ```
 chmod a+x train_TPGSR-TSRN.sh
 ./train_TPGSR-TSRN.sh
 ```
 
-## Run the test-prefixed shell to test the corresponding model.
+### Run the test-prefixed shell to test the corresponding model.
 ```
 Adding '--go_test' in the shell file
 ```
