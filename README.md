@@ -48,7 +48,7 @@ chmod a+x train_TPGSR-TSRN.sh
 ```
 Adding '--go_test' in the shell file
 ```
-## Cite this paper if you find our project work in your research:
+## Cite this paper:
 
 	@article{ma2021text,
   	title={Text Prior Guided Scene Text Image Super-resolution},
