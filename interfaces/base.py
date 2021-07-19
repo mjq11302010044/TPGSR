@@ -20,7 +20,6 @@ from model import tsrn, bicubic, srcnn, vdsr, srresnet, edsr, esrgan, rdn, lapsr
 from model import recognizer
 from model import moran
 from model import crnn
-from model.SEED.models.model_builder import ModelBuilder
 from dataset import lmdbDataset, \
     alignCollate_real, ConcatDataset, lmdbDataset_real, \
     alignCollate_syn, lmdbDataset_mix, alignCollateW2V_real, \
@@ -31,7 +30,6 @@ lmdbDataset_realBadSet, alignCollate_syn_random_reso, lmdbDataset_realIIIT, lmdb
 from loss import gradient_loss, percptual_loss, image_loss, semantic_loss
 
 from utils.labelmaps import get_vocabulary, labels2strs
-from model.SEED.utils.serialization import load_checkpoint, save_checkpoint
 
 sys.path.append('../')
 from utils import util, ssim_psnr, utils_moran, utils_crnn
