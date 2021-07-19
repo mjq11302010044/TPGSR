@@ -33,7 +33,7 @@ from tensorboardX import SummaryWriter
 from ptflops import get_model_complexity_info
 import string
 
-vis = True
+vis = False
 
 TEST_MODEL = "MORAN"
 sem_loss = SemanticLoss()
