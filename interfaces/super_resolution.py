@@ -974,22 +974,6 @@ class TextSR(base.TextBase):
                 metric_dict['psnr'].append(self.cal_psnr(img_sr, img_hr))
                 metric_dict['ssim'].append(self.cal_ssim(img_sr, img_hr))
 
-                metric_dict['psnr_lr'].append(self.cal_psnr(img_lr, img_hr))
-                metric_dict['ssim_lr'].append(self.cal_ssim(img_lr, img_hr))
-
-                # if not self.args.random_reso:
-                metric_dict['cnt_psnr'].append(self.cal_psnr(img_sr * prob_val, img_hr * prob_val))
-                metric_dict['cnt_ssim'].append(self.cal_ssim(img_sr * prob_val, img_hr * prob_val))
-
-                metric_dict['cnt_psnr_lr'].append(self.cal_psnr(img_lr * prob_val, img_hr * prob_val))
-                metric_dict['cnt_ssim_lr'].append(self.cal_ssim(img_lr * prob_val, img_hr * prob_val))
-                # else:
-                #    metric_dict['cnt_psnr'].append(0)
-                #    metric_dict['cnt_ssim'].append(0)
-
-                #    metric_dict['cnt_psnr_lr'].append(0)
-                #    metric_dict['cnt_ssim_lr'].append(0)
-
                 # del prob_val
             else:
 
@@ -1315,32 +1299,11 @@ class TextSR(base.TextBase):
         psnr_avg = sum(metric_dict['psnr']) / (len(metric_dict['psnr']) + 1e-10)
         ssim_avg = sum(metric_dict['ssim']) / (len(metric_dict['ssim']) + 1e-10)
 
-        cnt_psnr_avg = sum(metric_dict['cnt_psnr']) / (len(metric_dict['cnt_psnr']) + 1e-10)
-        cnt_ssim_avg = sum(metric_dict['cnt_ssim']) / (len(metric_dict['cnt_ssim']) + 1e-10)
-
-        psnr_avg_lr = sum(metric_dict['psnr_lr']) / (len(metric_dict['psnr_lr']) + 1e-10)
-        ssim_avg_lr = sum(metric_dict['ssim_lr']) / (len(metric_dict['ssim_lr']) + 1e-10)
-
-        cnt_psnr_avg_lr = sum(metric_dict['cnt_psnr_lr']) / (len(metric_dict['cnt_psnr_lr']) + 1e-10)
-        cnt_ssim_avg_lr = sum(metric_dict['cnt_ssim_lr']) / (len(metric_dict['cnt_ssim_lr']) + 1e-10)
-
-        print('[{}]\t'
-
-              'PSNR_LR {:.2f} | SSIM_LR {:.4f}\t'
-              'CNT_PSNR_LR {:.2f} | CNT_SSIM_LR {:.4f}\t'
-              .format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-
-                      float(psnr_avg_lr), float(ssim_avg_lr), 
-                      float(cnt_psnr_avg_lr), float(cnt_ssim_avg_lr),))
-
         print('[{}]\t'
 
               'PSNR {:.2f} | SSIM {:.4f}\t'
-              'CNT_PSNR {:.2f} | CNT_SSIM {:.4f}\t'
               .format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-
-                      float(psnr_avg), float(ssim_avg), 
-                      float(cnt_psnr_avg), float(cnt_ssim_avg),))
+                      float(psnr_avg), float(ssim_avg)))
         print('save display images')
         # self.tripple_display(images_lr, images_sr, images_hr, pred_str_lr, pred_str_sr, label_strs, index)
 
@@ -1355,9 +1318,6 @@ class TextSR(base.TextBase):
         psnr_avg = round(psnr_avg.item(), 6)
         ssim_avg = round(ssim_avg.item(), 6)
         
-        cnt_psnr_avg = round(cnt_psnr_avg.item(), 6)
-        cnt_ssim_avg = round(cnt_ssim_avg.item(), 6)
-
         if self.args.arch in ABLATION_SET:
             for i in range(self.args.stu_iter):
                 print('sr_accuray_iter' + str(i) + ': %.2f%%' % (acc[i] * 100))
