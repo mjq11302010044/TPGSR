@@ -3,15 +3,9 @@ MODEL:
 
 TRAIN:
   train_data_dir: [
-           # '../../hard_space1/mjq/TextZoom/train1',
-           # '../../hard_space1/mjq/TextZoom/train2',
-          # '../../hard_space1/mjq/IC15rec_mdb/',
-          #'../../hard_space1/mjq/ic15_4468_train_lmdb/'
-          #'../../hard_space1/mjq/COCO_Text_recognition/'
-          '../../hard_space1/mjq/',
-          # '../../hard_space1/mjq/svt_647',
-          #           'bad_image/'
-          #'../../hard_space1/mjq/CVPR2016/',
+           '/data0_ssd2t/majianqi/TextZoom/train1',
+           '/data0_ssd2t/majianqi/TextZoom/train2',
+          
   ]
   batch_size: 512
   width: 128
@@ -38,15 +32,9 @@ TRAIN:
   VAL:
     val_data_dir: [
              
-            # '../../hard_space1/mjq/TextZoom/test/easy',
-            # '../../hard_space1/mjq/TextZoom/test/medium',
-            # '../../hard_space1/mjq/TextZoom/test/hard',
-            #"/home/shikima/workspace/hard_space1/mjq/IC15rec_mdb/"
-            # "/home/shikima/workspace/hard_space1/mjq/ic15_2077/"
-            #'../../hard_space1/mjq/COCO_Text_recognition/'
-            '../../hard_space1/mjq/',
-            # '../../hard_space1/mjq/self-picked_image',
-            # 'bad_image/'
+            '/data0_ssd2t/majianqi/TextZoom/test/easy',
+            '/data0_ssd2t/majianqi/TextZoom/test/medium',
+            '/data0_ssd2t/majianqi/TextZoom/test/hard',
     ]
     n_vis: 10
     vis_dir: 'demo'
