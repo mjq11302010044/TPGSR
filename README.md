@@ -33,7 +33,7 @@ Other possible python packages like pyyaml, cv2, Pillow and imgaug
 	MORAN:  https://github.com/Canjie-Luo/MORAN_v2  
 	CRNN: https://github.com/meijieru/crnn.pytorch
 
-Unzip the codes and walk into the '$TPGSR_ROOT$/', place the pretrained weights from recognizer in '$TPGSR_ROOT$/'.
+Unzip the codes and walk into the 'TPGSR_ROOT/', place the pretrained weights from recognizer in 'TPGSR_ROOT/'.
 
 ### Download the TextZoom dataset:
 
