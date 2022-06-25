@@ -14,7 +14,7 @@ _Department of Computing, [The Hong Kong Polytechnic University](http://www.comp
 ![pytorch](https://img.shields.io/badge/pytorch-v1.2-green.svg?style=plastic)
 ![cuda](https://img.shields.io/badge/cuda-v9.1-green.svg?style=plastic)
 ![numpy](https://img.shields.io/badge/numpy-1.18-green.svg?style=plastic)
-![MIT](https://img.shields.io/badge/numpy-1.18-blue.svg?style=plastic)
+![MIT](https://img.shields.io/badge/license-MIT-blue)
 ```
 Other possible python packages like pyyaml, cv2, Pillow and imgaug
 ```
