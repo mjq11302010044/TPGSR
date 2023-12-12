@@ -1,4 +1,4 @@
-# Text Prior Guided Scene Text Image Super-Resolution
+# Text Prior Guided Scene Text Image Super-Resolution (TIP 2023)
 https://arxiv.org/abs/2106.15368
 
 _Jianqi Ma, Shi Guo, [Lei Zhang](https://www4.comp.polyu.edu.hk/~cslzhang)_  
@@ -64,7 +64,7 @@ Adding '--go_test' in the shell file
 	@article{ma2021text,
   	title={Text Prior Guided Scene Text Image Super-resolution},
   	author={Ma, Jianqi and Guo, Shi and Zhang, Lei},
-  	journal={arXiv preprint arXiv:2106.15368},
-  	year={2021}
+  	journal={IEEE Transactions on Image Processing},
+  	year={2023}
 	}
 
